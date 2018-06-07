@@ -1,0 +1,76 @@
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #8898ce;
+}
+
+.menu {
+    background: #fff;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    top: 25px;
+    left: 25px;
+    cursor: pointer;
+    box-shadow: 0 0 0 0 #FFF, 0 0 0 0 #FFF;
+    transition: box-shadow 1.1s cubic-bezier(.19,1,.22,1);
+}
+
+.menu:hover {
+    box-shadow: 0 0 0 8px #FFF, 0 0 0 8px #FFF;
+}
+
+.hamburguer-menu .hamburguer {
+    position: relative;
+    display: block;
+    background: #000;
+    width: 30px;
+    height: 2px;
+    top: 29px;
+    left: 15px;
+    transition: .5s cubic-bezier(.19,1,.22,1);
+}
+
+.hamburguer-menu .hamburguer:before,
+.hamburguer-menu .hamburguer:after {
+    background: #000;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: .5s cubic-bezier(.19,1,.22,1);
+}
+
+.hamburguer-menu .hamburguer:before {
+    top: -10px;
+}
+
+.hamburguer-menu .hamburguer:after {
+    bottom: -10px;
+}
+
+.hamburguer-menu input {
+    display: none;
+}
+
+.hamburguer-menu input:checked ~ label .hamburguer {
+    transform: rotate(45deg);
+}
+
+.hamburguer-menu input:checked ~ label .hamburguer:before {
+    transform: rotate(90deg);
+    top: 0;
+}
+
+.hamburguer-menu input:checked ~ label .hamburguer:after {
+    transform: rotate(90deg);
+    bottom: 0;
+}
